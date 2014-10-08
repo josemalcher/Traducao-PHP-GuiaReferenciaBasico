@@ -1,0 +1,164 @@
+Utilizando o PHP
+
+Para iniciar o desenvolvimento em <a title="PHP Docs" href="http://www.php.net/" target="_blank">PHP</a>, crie um arquivo de texto simples com uma extensão de arquivo “.php” e abra no editor de sua escolha:
+<ul>
+	<li><a title="Baixar NotePad ++" href="http://notepad-plus-plus.org/" target="_blank">NotePad++</a>: Free, Leve, Essencial, fácil de aprender.</li>
+	<li><a title="Baixar Sublime Text" href="http://www.sublimetext.com/" target="_blank">Sublime Text 2</a>: Free, Leve, Essencial, fácil de aprender, muito prático e usado por front-end.</li>
+	<li><a title="Comprar e Baixar dreamweaver " href="http://www.adobe.com/br/products/dreamweaver.html" target="_blank">Dreamweaver:</a> Pago, tem muitas funcionalidades para front-end e back-end.</li>
+	<li><a title="Baixar Netbeans" href="https://netbeans.org/" target="_blank">NetBeans:</a> IDE, Pesado, ideal para projetos grandes, ideal para programadores.</li>
+	<li><a title="Baixar Vim" href="http://www.vim.org/download.php" target="_blank">VIM</a>: Free, leve, curva de aprendizado maior, porém é super prático.</li>
+</ul>
+Este arquivo PHP pode incluir qualquer HTML, bem como o código de script PHP. Comece digitando os seguintes elementos HTML padrão no documento.
+<pre class="lang:php decode:true" title="utilizandoPHP.php">//HTML 5
+&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;Meu Primeiro Arquivo PHP&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+<h2>Incorporação PHP</h2>
+O código PHP pode ser incorporado em qualquer lugar em um documento web em uma das quatro maneiras diferentes. A notação padrão é para delimitar o código "<strong>&lt;?php</strong>" e "<strong>?&gt;</strong>". Isso é chamado de um bloco de código PHP, ou apenas um bloco PHP.
+
+Dentro de um bloco PHP está os procedimentos ou scripts a serem interpretados, e fora do bloco volta ao modo HTML. No bloco do PHP tudo vai ser analisado (executado) pelo “[tooltip tip="ou motor"]<span style="text-decoration: underline;">engine</span>[/tooltip] do PHP”, enquanto que no restante, tudo será enviado para a página web gerada, em HTML, sem qualquer execução.
+
+A segunda notação para criar um bloco PHP é uma versão curta do primeiro, onde a parte "php" é deixado de fora. Embora esta notação seja mais curta, só use ela em casos que o código PHP precise ser portátil. Porém, pode ocorrer que o suporte para esse formato de delimitador pode estar desativado no arquivo de configuração php.ini[tooltip tip="php.ini é um arquivo de onde está as configurações do PHP"](?)[/tooltip].
+<pre class="theme:github lang:php decode:true" title="ArquivoQualquer.php">&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;Exemplo PHP&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;?
+		//Código aqui
+	?&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+Uma terceira alternativa é inserir o código PHP dentro de um script nos elemento do HTML, com o atributo “language” definido como "php". Esta alternativa está sempre disponível, mas raramente utilizada.
+<pre class="lang:php decode:true" title="ArquivoQualquer.php">&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;Exemplo PHP&lt;/title&gt;
+		&lt;script language="php"&gt; 
+			//Código aqui
+		&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+O estilo que você pode encontrar é quando o script é incorporado entre as tags [tooltip tip="APS é uma linguagem de programação concorrente do PHP."]ASP(?)[/tooltip]. Este estilo é desabilitado por padrão, mas pode ser ativado a partir do arquivo de configuração do PHP.
+<pre class="lang:php decode:true" title="ArquivoQualquer.php">&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;Exemplo PHP&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;%
+		//Código aqui
+	%&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+A última tag de fechamento em um arquivo de script, pode ser omitida se o arquivo termina em modo PHP.
+
+&lt;?php ... ?&gt;  Usar quando o arquivo .php estiver por tags HTML
+<pre class="lang:php decode:true" title="ScriptPHP.php">&lt;?php 
+
+	//código PHP somente, não é preciso fechar</pre>
+<h2>Produzir texto</h2>
+A impressão de texto em PHP é feito pelo comando “echo” ou “print” seguido pela saída de digitação. Cada instrução deve terminar com um ponto e vírgula (;), para separá-lo de outras declarações. O ponto e vírgula para a última declaração em um bloco PHP é opcional.
+<pre class="lang:php decode:true" title="ArquivoQualquer.php">	&lt;?php
+		echo "Olá Mundo";//final com ;
+
+		print  "Olá mundo" //final sem ; - Recomendo que sempre feche com ;
+	?&gt;</pre>
+A saída também pode ser gerada usando o "&lt;?=" delimitador aberto. A partir do PHP 5.4, esta sintaxe é válida, mesmo que o modo delimitador curto do PHP esteja desativado.
+<pre class="lang:php decode:true" title="ArquivoQualquer.php">&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;Exemplo PHP&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;?= "Olá Mundo"?&gt;
+
+	&lt;? echo "Olá Mundo"?&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+Tenha em mente que a saída de texto só será visível na página web se ele está localizado dentro dos elementos HTML da página.
+<pre class="lang:php decode:true" title="ArquivoQualquer.php">&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;Exemplo PHP&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;html&gt;
+
+	&lt;?php echo "Olá Mundo"; ?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+<h2> Instalando um servidor web local</h2>
+Para visualizar o código PHP em um navegador o código primeiro tem que ser analisado em um servidor web com o módulo PHP instalado.
+
+Uma maneira fácil de configurar um ambiente de PHP é fazer o download e instalar uma distribuição de algum servidor popular Apache chamado <a title="XAMPP" href="https://www.apachefriends.org/pt_br/index.html">XAMPP (https://www.apachefriends.org/pt_br/index.html)</a>, que é um pacote com Apache, PHP, Perl e MySQL. Isso permitirá que você experimente o PHP em seu próprio computador.
+
+<!--Ads1--> Depois de instalar o servidor web local escreva no seu navegador o endereço "http://localhost" para se certificar de que o servidor está funcionando em seu computador. Ele deve exibir o arquivo index.php[tooltip tip="index.html ou index.php é o padrão para páginas iniciais"](?)[/tooltip], que por padrão está localizada em "C:\xampp\htdocs\index.php" em uma máquina Windows. O “htdocs” ou "www" é a pasta que o servidor web Apache usa para "hospedar" os arquivos.
+
+Procure o arquivo usando o caminho "http://localhost/ArquivoQueVoceCriou.php" para poder executá-lo. Veja os resultados
+<blockquote>Olá, mundo!</blockquote>
+Continuando de antes, o documento php "Olá Mundo" deve ser semelhante a este:
+<pre class="lang:php decode:true" title="OlaMundo.php">&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;Exemplo PHP&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;html&gt;
+	&lt;?php 
+		echo "Olá Mundo"; 
+	?&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+Lembrando que para visualizar este arquivo PHP, é necessário salvá-lo na pasta “c:\xampp\htdocs” do servidor web (o diretório raiz do servidor), com um nome como "olaMundo.php". Em seguida, aponte o navegador para o seu caminho, o que é "http://localhost/olaMundo.php " para um servidor web local.
+
+Quando é feita uma solicitação de uma página web PHP, o script é analisado no servidor e é enviado para o navegador somente o HTML. O <strong>código-fonte do site não é visto</strong>, ele irá mostrar nada do código do lado do cliente, <strong>a saída é sempre em HTML</strong>.
+<h2>Interpretar e retornar</h2>
+PHP é uma linguagem <strong>interpretada</strong>, e <strong>não uma [tooltip tip="JAVA é um bom exemplo de linguague que precisa ser compilada"]linguagem compilada(?)[/tooltip]</strong>. Cada vez que um visitante chega a um site PHP a engine do PHP analisa e interpreta o código pra logo em seguida retornar o HTML, que é então enviado para o visitante. A principal vantagem é que o código pode ser alterado facilmente, <strong>sem ter que recompilar e reimplantar o site.</strong> A principal desvantagem é que interpretar o código em tempo de execução requer mais recursos do servidor.
+
+Para um pequeno site, a falta de recursos do servidor raramente é um problema. O tempo que leva para interpretar o script PHP também é minúsculo em comparação com outros grandes sites, com o tempo é necessário mais potência no servidor para execução e consultas de banco de dados. No entanto, para uma grande aplicação web com muito tráfego, a carga do servidor de compilação de arquivos PHP é maior e significativo, pois afeta diretamente no tempo que o site leva para aparecer na tela do usuário.
+<h2>Comentários</h2>
+Os comentários são usados ​​para inserir notas no código e não tem nenhum efeito sobre a análise do script. PHP tem as <strong>duas</strong> notações padrão, para uma <strong>única linha (“//”)</strong> e <strong>multi-linha (/* */)</strong> de comentários. O comentário notação <strong>tipo Perl (#)</strong> também pode ser usado para fazer comentários de uma linha.
+<pre class="lang:php decode:true" title="Comentario.php">&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;Exemplo PHP&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;html&gt;
+&lt;?php
+	// -Linha única comentário
+	# - Linha única comentário
+
+	/* multi-linha
+
+	comentário
+
+	*/
+
+?&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+Como em HTML, caracteres em branco, como espaços, tabulações e comentários são geralmente ignorados pelo mecanismo PHP. Isto permite muita liberdade em como formatar seu código. Obviamente é sempre bom obedescer certos padrões, a comunidade criou um guia de estilo para codificar em PHP, você pode acessar em <a title="PHP do Jeito Certo" href="http://br.phptherightway.com/" target="_blank">http://br.phptherightway.com/</a>
+<h4 style="text-align: center;">Bom, essa foi a primeira parte, muito em breve postarei mais.</h4>
+<h3>Gostou? Comente ou Compartilhe!</h3>
+<blockquote>Não Existe pergunta boba!</blockquote>
